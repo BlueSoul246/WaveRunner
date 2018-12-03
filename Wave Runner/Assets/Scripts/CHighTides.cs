@@ -47,7 +47,7 @@ public class CHighTides : MonoBehaviour
         //speed medium
         else if (waveMover == 2)
         {
-            this.transform.position = new Vector2(0.0f, this.transform.position.y + 0.03f);
+            this.transform.position = new Vector2(0.0f, this.transform.position.y + 0.035f);
         }
 
         //speed fast
