@@ -15,31 +15,29 @@ public class CPlayer : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
 
-        // let the gameObject fall down
+        //let player fall down
         gameObject.transform.position = new Vector3(0, -2, 0);
     }
 
     void Update()
     {
-        if (controller.isGrounded)
+        if(controller.isGrounded)
         {
-            // We are grounded, so recalculate
-            // move direction directly from axes
-
+            //we are grounded, so recalculate move direction directly from axes
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection = moveDirection * speed;
 
-            if (Input.GetButton("Jump"))
+            if(Input.GetButton("Jump"))
             {
                 moveDirection.y = jumpSpeed;
             }
         }
 
-        // Apply gravity
+        //apply gravity
         moveDirection.y = moveDirection.y - (gravity * Time.deltaTime);
 
-        // Move the controller
+        //move the controller
         controller.Move(moveDirection * Time.deltaTime);
     }
 

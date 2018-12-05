@@ -56,4 +56,34 @@ public class CNextLevel1 : MonoBehaviour
             SceneManager.LoadScene("WinGame");
         }
     }
+
+    void Update()
+    {
+        //level 1 loads level 2
+        if (waveMover == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                SceneManager.LoadScene("DirtLevel2");
+            }   
+        }
+
+        //level 2 loads level 3
+        else if (waveMover == 2)
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                SceneManager.LoadScene("CloudLevel3");
+            }
+        }
+
+        //level 3 loads win screen
+        else if (waveMover == 3)
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                SceneManager.LoadScene("WinGame");
+            }
+        }
+    }
 }
